@@ -1,0 +1,32 @@
+{
+  "name": "hostapdjs",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dottgonzo/hostapdjs.git"
+  },
+  "keywords": [
+    "hostapd"
+  ],
+  "author": "Dario Caruso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dottgonzo/hostapdjs/issues"
+  },
+  "dependencies": {
+    "promise": "^7.0.4",
+    "promised-exec": "^1.0.1",
+    "verbo": "0.0.9"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1"
+  }
+}
