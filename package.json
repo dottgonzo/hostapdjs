@@ -25,12 +25,16 @@
     "url": "https://github.com/dottgonzo/hostapdjs/issues"
   },
   "dependencies": {
+    "output-file-sync": "^1.1.1",
     "path-exists": "^2.1.0",
     "promise": "^7.0.4",
     "promised-exec": "^1.0.1",
     "verbo": "0.0.9"
   },
   "devDependencies": {
-    "chai": "^3.4.1"
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "json-add": "0.0.1",
+    "mocha": "^2.3.4"
   }
 }

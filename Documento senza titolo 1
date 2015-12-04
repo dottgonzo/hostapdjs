@@ -1,0 +1,29 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// exec('systemctl stop hostapd')
+// exec('systemctl stop dnsmasq')
+exec('ifconfig wlan0 up')
+
+exec('sudo wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant.conf -D wext && sudo dhclient wlan0').then(function(){
+
+
+
+// timeout
+
+testconnection().then().catch(function(){
+// exec('systemctl stop wpa_supplicant')
+
+exec('systemctl start hostapd')
+exec('systemctl start dnsmasq')
+
+exec('ifconfig wlan0 192.168.0.1 netmask 255.255.255.0 up')
+
+
+
+})
+
+
+})
+
+
+
+

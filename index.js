@@ -1,78 +1,81 @@
-var Promise=require('promise'),
+var pathExists=require('path-exists'),
+fs = require('fs'),
+merge=require('json-add'),
+Promise=require('promise'),
 exec=require('promised-exec'),
-pathExists=require('path-exists'),
-verb=require('verbo');
+outputFileSync = require('output-file-sync');
 
-function Hpd(options,path){
 
-  if(!path){
-    path='/etc/hostapd/hostapd.conf'
+module.exports=function(options,action){
+  return new Promise(function(resolve,reject){
+
+  if(!pathExists.sync('/etc/default/hostapd')){
+    reject('no default conf file was founded for hostapd')
+  }
+  if(!options || typeof(options)!='object'){
+    reject('Type Error, provide a valid json object')
+  }
+  if(!options.interface){
+    reject('No configuration interface was provided')
   }
 
-  this.path=path;
-
-  for(var i=0;i<Object.keys(options).length; i++){
-    this[Object.keys(options)[i]]=options[Object.keys(options)[i]]
+  function parsemasq(config){
+    var write='';
+    for(var c=0;c<Object.keys(config).length;c++){
+      if(Object.keys(config)[c]!='path'){
+        write=write+Object.keys(config)[c]+'='+config[Object.keys(config)[c]]+'\n';
+      }
+    }
+    return write
   }
 
-  new Promise(function(resolve,reject){
+  var config={
+    path:'/etc/hostapd/hostapd.conf',
+    driver:'nl80211',
+    hw_mode:'g',
+    channel:2,
+    macaddr_acl:0,
+    auth_algs:1,
+    ignore_broadcast_ssid:0
+  }
 
-  exec('which hostapd').then(function(){
 
-    var errors=[];
 
-    if (!pathExists.sync(path)){
-      errors.push('wrong hostapd configuration file path')
+  if(config.wpa_passphrase){
+    var wpa_standard={
+      wpa:2,
+      wpa_key_mgmt:'WPA-PSK',
+      wpa_pairwise:'TKIP',
+      rsn_pairwise:'CCMP'
     }
-     if(!options.device){
-      errors.push('you must specify a device')
-    }
-     if(!options.driver){
-       errors.push('you must specify the device driver')
-    }
+    merge(config,wpa_standard)
+  }
 
+  merge(config,options)
+  if (!config.test){
+  // if(fs.readFileSync('/etc/default/hostapd')!='DAEMON_CONF="'+config.path+'"'){
+  outputFileSync('/etc/default/hostapd', 'DAEMON_CONF="'+config.path+'"', 'utf-8');
+  // }
+  }
 
-    if(errors.length>0){
-      verb(errors,'error','hostapdjs');
-      reject(errors)
-    } else{
+  // manca il controllo che evita di riscrivere se il file è già identico
+  outputFileSync(config.path, parsemasq(config), 'utf-8');
+  if (!config.test){
 
-
-  // write hostapd conf
-
-
-
-
-    }
-
-
-  }).catch(function(){
-    verb('hostapd is not installed','error','hostapdjs')
-    reject('hostapd is not installed')
-  })
-
+    exec('systemctl restart hostapd').then(function(){
+      resolve(config)
+    }).catch(function(err){
+      console.log(err)
+      reject(err)
     })
-
-
-}
-
-Hpd.prototype.start=function(){
-    new Promise(function(resolve,reject){
-
-  exec('systemctl start hostapd').then(function(){
-    exec('systemctl start dnsmasq').then(function(){
-
-          resolve('activated')
-
-        }).catch(function(){
-              reject('hostapd start error')
-
+}else{
+  exec('echo').then(function(){
+    resolve(config)
+  }).catch(function(err){
+    console.log(err)
+    reject(err)
   })
-}).catch(function(){
-  reject('dnsmasq start error')
-})
-
-})
 }
+  })
 
-module.exports=Hpd
+};
