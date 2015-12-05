@@ -5,7 +5,12 @@ var verb=require('verbo');
 
 
 before('get status info',function() {
-  return HAPD({path:'/tmp/hapd.conf',interface:'wlan0',test:true}).then(function(data){
+  return HAPD({
+    path:'/tmp/hapd.conf',
+    interface:'wlan0',
+    ssid:'testssid',
+    test:true
+  }).then(function(data){
 verb(data,'info','Status Info')
 json=data
   }).catch(function(err){

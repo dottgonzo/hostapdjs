@@ -18,6 +18,9 @@ module.exports=function(options,action){
   if(!options.interface){
     reject('No configuration interface was provided')
   }
+  if(!options.ssid){
+    reject('No configuration interface was provided')
+  }
 
   function parsemasq(config){
     var write='';
