@@ -44,7 +44,7 @@ module.exports=function(options,action){
 
 
 
-  if(config.wpa_passphrase){
+  if(options.wpa_passphrase){
     var wpa_standard={
       wpa:2,
       wpa_key_mgmt:'WPA-PSK',
