@@ -1,6 +1,6 @@
 {
   "name": "hostapdjs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Utility to easily configure hostapd on a linux computer",
   "main": "index.js",
   "directories": {
