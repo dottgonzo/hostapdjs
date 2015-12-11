@@ -28,7 +28,7 @@
     "url": "https://github.com/dottgonzo/hostapdjs/issues"
   },
   "dependencies": {
-    "json-add": "0.0.1",
+    "json-add": "0.0.3",
     "output-file-sync": "^1.1.1",
     "path-exists": "^2.1.0",
     "promise": "^7.0.4",
