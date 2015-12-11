@@ -61,7 +61,7 @@ module.exports=function(options,action){
   // }
   }
 
-  // manca il controllo che evita di riscrivere se il file è già identico
+  // manca il controllo che evita di riscrivere il file se è identico a quello presente
   outputFileSync(config.path, parsemasq(config), 'utf-8');
   if (!config.test){
 

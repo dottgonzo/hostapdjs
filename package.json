@@ -1,7 +1,7 @@
 {
   "name": "hostapdjs",
   "version": "0.0.3",
-  "description": "",
+  "description": "Utility to easily configure hostapd on a linux computer",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -17,7 +17,10 @@
     "url": "https://github.com/dottgonzo/hostapdjs.git"
   },
   "keywords": [
-    "hostapd"
+    "hostapd",
+    "wifi",
+    "wireless",
+    "access point"
   ],
   "author": "Dario Caruso",
   "license": "ISC",
