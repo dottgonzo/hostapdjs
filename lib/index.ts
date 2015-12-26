@@ -1,4 +1,4 @@
-var pathExists=require('path-exists'),
+import pathExists=require('path-exists'),
 fs = require('fs'),
 merge=require('json-add'),
 Promise=require('promise'),

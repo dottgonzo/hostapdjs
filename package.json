@@ -1,8 +1,8 @@
 {
   "name": "hostapdjs",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Utility to easily configure hostapd on a linux computer",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
@@ -28,14 +28,25 @@
     "url": "https://github.com/dottgonzo/hostapdjs/issues"
   },
   "dependencies": {
+    "bluebird": "^3.1.1",
     "json-add": "0.0.3",
     "output-file-sync": "^1.1.1",
     "path-exists": "^2.1.0",
-    "promise": "^7.0.4",
     "promised-exec": "^1.0.1",
     "verbo": "0.0.9"
   },
   "devDependencies": {
-    "chai": "^3.4.1"
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-bump": "^1.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-prompt": "^0.1.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tag-version": "^1.3.0",
+    "gulp-typescript": "^2.10.0",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.3.4"
   }
 }

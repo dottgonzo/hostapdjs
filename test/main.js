@@ -1,8 +1,8 @@
 
 var expect = require('chai').expect;
-var HAPD=require('../index');
+var HAPD=require('../lib/index');
 var verb=require('verbo');
-
+var json;
 
 
 
