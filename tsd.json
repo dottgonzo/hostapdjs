@@ -52,6 +52,12 @@
     },
     "bluebird/bluebird.d.ts": {
       "commit": "1da639a106527e0c4010b354a1efe52a3059a291"
+    },
+    "path-exists/path-exists.d.ts": {
+      "commit": "1da639a106527e0c4010b354a1efe52a3059a291"
+    },
+    "deep-diff/deep-diff.d.ts": {
+      "commit": "1da639a106527e0c4010b354a1efe52a3059a291"
     }
   }
 }

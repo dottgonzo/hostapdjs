@@ -15,3 +15,5 @@
 /// <reference path="gulp-mocha/gulp-mocha.d.ts" />
 /// <reference path="gulp-concat/gulp-concat.d.ts" />
 /// <reference path="bluebird/bluebird.d.ts" />
+/// <reference path="path-exists/path-exists.d.ts" />
+/// <reference path="deep-diff/deep-diff.d.ts" />

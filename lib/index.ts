@@ -1,12 +1,12 @@
-import pathExists=require('path-exists'),
-fs = require('fs'),
-merge=require('json-add'),
-Promise=require('promise'),
-exec=require('promised-exec'),
-outputFileSync = require('output-file-sync');
+import * as pathExists from "path-exists";
+import * as fs from "fs";
+import merge =require("json-add");
+import * as Promise from "bluebird";
+import exec=require('promised-exec');
+var outputFileSync = fs.writeFileSync;
 
 
-module.exports=function(options,action){
+module.exports=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
   return new Promise(function(resolve,reject){
 
   if(!pathExists.sync('/etc/default/hostapd')){
@@ -39,7 +39,8 @@ module.exports=function(options,action){
     channel:2,
     macaddr_acl:0,
     auth_algs:1,
-    ignore_broadcast_ssid:0
+    ignore_broadcast_ssid:0,
+    test:false
   }
 
 

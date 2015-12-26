@@ -1,6 +1,6 @@
 {
   "name": "hostapdjs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Utility to easily configure hostapd on a linux computer",
   "main": "lib/index.js",
   "directories": {
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "bluebird": "^3.1.1",
-    "json-add": "0.0.3",
+    "json-add": "0.0.7",
     "output-file-sync": "^1.1.1",
     "path-exists": "^2.1.0",
     "promised-exec": "^1.0.1",
@@ -41,6 +41,7 @@
     "gulp-bump": "^1.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-filter": "^3.0.1",
+    "gulp-git": "^1.6.0",
     "gulp-mocha": "^2.2.0",
     "gulp-prompt": "^0.1.2",
     "gulp-sourcemaps": "^1.6.0",

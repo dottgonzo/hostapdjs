@@ -8,7 +8,6 @@ var tsProject = ts.createProject('tsconfig.json');
 var spawn = require('child_process').spawn;
 var bump = require('gulp-bump');
 
-
 var prompt = require('gulp-prompt');
 var git = require('gulp-git');
 
@@ -32,7 +31,7 @@ gulp.task('pushPatch', ['Addbumped'], function () {
         message: 'enter a commit msg, eg initial commit'
     }, function (res) {
         return gulp.src('.').pipe(git.commit(res.commit)).on('end', function () {
-            this.pipe(git.push())
+            git.push()
         });;
     }));
 });
