@@ -6,7 +6,7 @@ import exec=require('promised-exec');
 var outputFileSync = fs.writeFileSync;
 
 
-module.exports=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
+export=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
   return new Promise(function(resolve,reject){
 
   if(!pathExists.sync('/etc/default/hostapd')){
