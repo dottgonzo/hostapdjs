@@ -21,6 +21,7 @@ gulp.task('bumpPatch', function () {
     })).pipe(gulp.dest('./'));
 });
 
+
 gulp.task('Addbumped', ['bumpPatch'], function () {
     return gulp.src('.').pipe(git.add({ args: '-A' }));
 });
