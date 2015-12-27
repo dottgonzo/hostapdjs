@@ -2,11 +2,10 @@ import * as pathExists from "path-exists";
 import * as fs from "fs";
 import merge =require("json-add");
 import * as Promise from "bluebird";
-import exec=require('promised-exec');
-var outputFileSync = fs.writeFileSync;
-
+let exec=require("promised-exec");
 
 export=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
+        let outputFileSync = fs.writeFileSync;
   return new Promise(function(resolve,reject){
 
   if(!pathExists.sync('/etc/default/hostapd')){
