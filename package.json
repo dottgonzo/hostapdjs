@@ -1,6 +1,6 @@
 {
   "name": "hostapdjs",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Utility to easily configure hostapd on a linux computer",
   "main": "lib/index.js",
   "directories": {
@@ -30,7 +30,6 @@
   "dependencies": {
     "bluebird": "^3.1.1",
     "json-add": "0.0.7",
-    "output-file-sync": "^1.1.1",
     "path-exists": "^2.1.0",
     "promised-exec": "^1.0.1",
     "verbo": "0.0.9"
