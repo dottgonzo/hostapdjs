@@ -24,7 +24,7 @@ export=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
   function parsemasq(config){
     var write='';
     for(var c=0;c<Object.keys(config).length;c++){
-      if(Object.keys(config)[c]!='path'){
+      if(Object.keys(config)[c]!='path'&&Object.keys(config)[c]!='test'){
         write=write+Object.keys(config)[c]+'='+config[Object.keys(config)[c]]+'\n';
       }
     }
