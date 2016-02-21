@@ -4,9 +4,22 @@ import merge =require("json-add");
 import * as Promise from "bluebird";
 let exec=require("promised-exec");
 
-export=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
+
+interface Iconfig {
+        path:string;
+    driver:string;
+    hw_mode:string;
+    channel:number;
+    macaddr_acl:number;
+    auth_algs:number;
+    ignore_broadcast_ssid:number;
+    test:boolean;
+}
+
+
+function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string}){
         let outputFileSync = fs.writeFileSync;
-  return new Promise(function(resolve,reject){
+  return new Promise<Iconfig>(function(resolve,reject){
 
   if(!pathExists.sync('/etc/default/hostapd')){
     reject('no default conf file was founded for hostapd')
@@ -31,7 +44,9 @@ export=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
     return write
   }
 
-  var config={
+
+
+  let config=<Iconfig>{
     path:'/etc/hostapd/hostapd.conf',
     driver:'nl80211',
     hw_mode:'g',
@@ -82,3 +97,4 @@ export=function(options:{interface:string,ssid:string,wpa_passphrase:string}){
   })
 
 };
+export=Hostapdjs;

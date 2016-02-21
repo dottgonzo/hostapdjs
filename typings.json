@@ -1,0 +1,23 @@
+{
+  "name": "hostapdjs",
+  "ambientDependencies": {
+    "assertion-error": "github:DefinitelyTyped/DefinitelyTyped/assertion-error/assertion-error.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "gulp": "github:DefinitelyTyped/DefinitelyTyped/gulp/gulp.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "orchestrator": "github:DefinitelyTyped/DefinitelyTyped/orchestrator/orchestrator.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "Q": "github:DefinitelyTyped/DefinitelyTyped/q/Q.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "gulp-sourcemaps": "github:DefinitelyTyped/DefinitelyTyped/gulp-sourcemaps/gulp-sourcemaps.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "gulp-typescript": "github:DefinitelyTyped/DefinitelyTyped/gulp-typescript/gulp-typescript.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "gulp-util": "github:DefinitelyTyped/DefinitelyTyped/gulp-util/gulp-util.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "through2": "github:DefinitelyTyped/DefinitelyTyped/through2/through2.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "vinyl": "github:DefinitelyTyped/DefinitelyTyped/vinyl/vinyl.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "chalk": "github:DefinitelyTyped/DefinitelyTyped/chalk/chalk.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "gulp-mocha": "github:DefinitelyTyped/DefinitelyTyped/gulp-mocha/gulp-mocha.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "gulp-concat": "github:DefinitelyTyped/DefinitelyTyped/gulp-concat/gulp-concat.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "bluebird": "github:DefinitelyTyped/DefinitelyTyped/bluebird/bluebird.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "path-exists": "github:DefinitelyTyped/DefinitelyTyped/path-exists/path-exists.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
+    "deep-diff": "github:DefinitelyTyped/DefinitelyTyped/deep-diff/deep-diff.d.ts#1da639a106527e0c4010b354a1efe52a3059a291"
+  }
+}

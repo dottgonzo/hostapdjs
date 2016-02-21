@@ -37,9 +37,13 @@ gulp.task('pushPatch', ['Addbumped'], function () {
     }));
 });
 
-gulp.task('test', function () {
+gulp.task('test', function (done) {
     return gulp.src('test/**/*.js', { read: false })
-        .pipe(mocha({ reporter: 'spec' }));
+        .pipe(mocha({ reporter: 'spec' }).on('error', function (err) {
+     throw err;
+   }).on('close', function () {
+        process.exit(-1);
+   }));
 });
 
 gulp.task('build', function () {
