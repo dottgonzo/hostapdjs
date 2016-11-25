@@ -1,6 +1,6 @@
 
 var expect = require('chai').expect;
-var HAPD=require('../lib/index');
+var HAPD=require('../index');
 var json;
 
 

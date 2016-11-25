@@ -1,8 +1,8 @@
 import * as pathExists from "path-exists";
 import * as fs from "fs";
-import merge =require("json-add");
+import merge from "json-add";
 import * as Promise from "bluebird";
-let exec=require("promised-exec");
+const exec=require("promised-exec");
 
 
 interface Iconfig {
@@ -18,13 +18,13 @@ interface Iconfig {
 
 
 function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string}){
-        let outputFileSync = fs.writeFileSync;
+        const outputFileSync = fs.writeFileSync;
   return new Promise<Iconfig>(function(resolve,reject){
 
   if(!pathExists.sync('/etc/default/hostapd')){
     reject('no default conf file was founded for hostapd')
   }
-  if(!options || typeof(options)!='object'){
+  if(!options || typeof(options)!=='object'){
     reject('Type Error, provide a valid json object')
   }
   if(!options.interface){
@@ -37,7 +37,7 @@ function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string})
   function parsemasq(config){
     var write='';
     for(var c=0;c<Object.keys(config).length;c++){
-      if(Object.keys(config)[c]!='path'&&Object.keys(config)[c]!='test'){
+      if(Object.keys(config)[c]!=='path'&&Object.keys(config)[c]!=='test'){
         write=write+Object.keys(config)[c]+'='+config[Object.keys(config)[c]]+'\n';
       }
     }
@@ -46,7 +46,7 @@ function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string})
 
 
 
-  let config=<Iconfig>{
+  const config=<Iconfig>{
     path:'/etc/hostapd/hostapd.conf',
     driver:'nl80211',
     hw_mode:'g',
@@ -71,7 +71,7 @@ function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string})
 
   merge(config,options)
   if (!config.test){
-  // if(fs.readFileSync('/etc/default/hostapd')!='DAEMON_CONF="'+config.path+'"'){
+  // if(fs.readFileSync('/etc/default/hostapd')!=='DAEMON_CONF="'+config.path+'"'){
   outputFileSync('/etc/default/hostapd', 'DAEMON_CONF="'+config.path+'"', 'utf-8');
   // }
   }

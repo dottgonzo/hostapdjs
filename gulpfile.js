@@ -50,7 +50,7 @@ gulp.task('build', function () {
     var tsResult = tsProject.src() // instead of gulp.src(...)
         .pipe(sourcemaps.init()) // This means sourcemaps will be generated 
 
-        .pipe(ts(tsProject, {
+        .pipe(tsProject({
             sortOutput: true,
 					   }));
 
