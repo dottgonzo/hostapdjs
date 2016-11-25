@@ -17,7 +17,7 @@ interface Iconfig {
 }
 
 
-function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string}){
+export default function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string}){
         const outputFileSync = fs.writeFileSync;
   return new Promise<Iconfig>(function(resolve,reject){
 
@@ -97,4 +97,4 @@ function Hostapdjs(options:{interface:string,ssid:string,wpa_passphrase:string})
   })
 
 };
-export=Hostapdjs;
+
