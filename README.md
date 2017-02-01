@@ -1,7 +1,5 @@
 # hostapdjs
 
-[![NPM Version][npm-image]][npm-url]
-
 ## Install
 
 ```bash
